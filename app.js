@@ -33,7 +33,7 @@ const sendSlackMessage = async (
   channel_id,
   payload
 ) => {
-  await axios.post(
+  const res = await axios.post(
     'https://slack.com/api/chat.postMessage',
     {
       channel: channel_id,
@@ -46,6 +46,9 @@ const sendSlackMessage = async (
       },
     },
   )
+    console.log("res 🚀🚀🚀");
+  return res
+
 }
 
 /**
@@ -59,7 +62,7 @@ const sendSlackMessage = async (
  * 3. send the message with the conversation_id and the bot_id to the mock-engines or handle it however you want
  * 4. send a message using this api https://api.slack.com/methods/chat.postMessage and user the token in the heade and in the body use {channel: the saved channel id, [smth]: https://app.slack.com/block-kit-builder  use this to build the message}
  */
-fastify.post("/slack-message", function (request, reply) {
+fastify.post("/slack-message", function (request, reply){
   console.log("request.body");
   console.log(request.body);
   console.log("request.body");
@@ -68,7 +71,7 @@ fastify.post("/slack-message", function (request, reply) {
     console.log("payload 😎😎😎😎😎😎😎😎😎😎😎", payload);
     if (payload.actions[0].value === 'location'){
       console.log("location")
-      sendSlackMessage(payload.token, payload.channel.id, {
+       sendSlackMessage(payload.token, payload.channel.id, {
         text: "we are located in 1234",
       })
     } else {
