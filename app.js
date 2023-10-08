@@ -46,7 +46,7 @@ const sendSlackMessage = async (
       },
     },
   )
-    console.log("res 🚀🚀🚀");
+    console.log("res 🚀🚀🚀", res);
   return res
 
 }
