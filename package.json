@@ -1,0 +1,33 @@
+{
+  "name": "slack-bot-test",
+  "version": "1.0.0",
+  "description": "slack webhook test",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AZZIE2000/slack-bot-test.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AZZIE2000/slack-bot-test/issues"
+  },
+  "homepage": "https://github.com/AZZIE2000/slack-bot-test#readme",
+  "dependencies": {
+    "@fastify/cors": "^8.3.0",
+    "@fastify/formbody": "^7.4.0",
+    "body-parser": "^1.20.2",
+    "fastify": "^4.22.2",
+    "fastify-formbody": "^5.3.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.6.0"
+  },
+  "engines": {
+    "node": "18.x"
+  }
+}
