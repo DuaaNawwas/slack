@@ -65,11 +65,14 @@ fastify.post("/slack-message", function (request, reply) {
   console.log("request.body");
   if(request.body.payload){
     const payload = JSON.parse(request.body.payload);
+    console.log("payload 😎😎😎😎😎😎😎😎😎😎😎", payload);
     if (payload.actions[0].value === 'location'){
+      console.log("location")
       sendSlackMessage(payload.token, payload.channel.id, {
         text: "we are located in 1234",
       })
     } else {
+      console.log("not recognized")
       sendSlackMessage(payload.token, payload.channel.id, {
         text: "not recognized",
       })
